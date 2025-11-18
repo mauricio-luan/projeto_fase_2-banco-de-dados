@@ -1,10 +1,4 @@
-/*
-
-#############################################################
-script de inserção de dados relacionados a Construtora Alfa
-#############################################################
-
- */
+-- SCRIPT DE INSERÇÃO DE DADOS (CONSTRUTORA ALFA)
 -- insere Categorias
 INSERT INTO
     Categorias (codigo, descricao)
@@ -33,13 +27,12 @@ VALUES
 
 -- insere Construtora
 INSERT INTO
-    Construtoras (codigo, nome, nome_fantasia, pais)
+    Construtoras (codigo, nome, nome_fantasia)
 VALUES
     (
         '10',
         'Construtora Alfa S.A.',
-        'Alfa Incorporações',
-        'BR'
+        'Alfa Incorporações'
     );
 
 -- insere Equipamentos
@@ -188,17 +181,204 @@ INSERT INTO
 VALUES
     ('5133333336', '10');
 
-/*
-Obras_Equipamentos
-OBRA EQUIPAMENTO DATA DE INÍCIO DATA FINAL
-115 301 18/03/2022 24/10/2022
-115 304 20/04/2022 02/08/2022
-115 306 06/07/2021 18/07/2021
-115 307 04/03/2022 20/03/2022
-115 309 04/08/2021 10/08/2021
-116 304 22/10/2022 25/10/2022
-116 305 07/03/2022 10/03/2022
-116 306 12/09/2022 21/09/2022
-116 307 16/08/2022 24/08/2022
-116 308 23/10/2022 25/10/2022
- */
+-- insere alocações dos equipamentos (Equipamentos x Obras)
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL001',
+        '115',
+        '301',
+        TO_DATE ('18/03/2022', 'DD/MM/YYYY'),
+        TO_DATE ('24/10/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL002',
+        '115',
+        '304',
+        TO_DATE ('20/04/2022', 'DD/MM/YYYY'),
+        TO_DATE ('02/08/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL003',
+        '115',
+        '306',
+        TO_DATE ('06/07/2021', 'DD/MM/YYYY'),
+        TO_DATE ('18/07/2021', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL004',
+        '115',
+        '307',
+        TO_DATE ('04/03/2022', 'DD/MM/YYYY'),
+        TO_DATE ('20/03/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL005',
+        '115',
+        '309',
+        TO_DATE ('04/08/2021', 'DD/MM/YYYY'),
+        TO_DATE ('10/08/2021', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL006',
+        '116',
+        '304',
+        TO_DATE ('22/10/2022', 'DD/MM/YYYY'),
+        TO_DATE ('25/10/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL007',
+        '116',
+        '305',
+        TO_DATE ('07/03/2022', 'DD/MM/YYYY'),
+        TO_DATE ('10/03/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL008',
+        '116',
+        '306',
+        TO_DATE ('12/09/2022', 'DD/MM/YYYY'),
+        TO_DATE ('21/09/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL009',
+        '116',
+        '307',
+        TO_DATE ('16/08/2022', 'DD/MM/YYYY'),
+        TO_DATE ('24/08/2022', 'DD/MM/YYYY')
+    );
+
+INSERT INTO
+    Alocacoes (
+        codigo_alocacao,
+        fk_obra_codigo,
+        fk_equipamento_codigo,
+        data_inicio_uso,
+        data_termino_uso
+    )
+VALUES
+    (
+        'AL010',
+        '116',
+        '308',
+        TO_DATE ('23/10/2022', 'DD/MM/YYYY'),
+        TO_DATE ('25/10/2022', 'DD/MM/YYYY')
+    );
+
+-- insere Trabalhadores
+INSERT INTO
+    Trabalhadores (cpf, nome, salario, fk_obra_codigo)
+VALUES
+    ('101.101.101-34', 'José Chaves', 2200.00, '115');
+
+INSERT INTO
+    Trabalhadores (cpf, nome, salario, fk_obra_codigo)
+VALUES
+    ('102.102.102-91', 'Pedro Passos', 3502.18, '115');
+
+INSERT INTO
+    Trabalhadores (cpf, nome, salario, fk_obra_codigo)
+VALUES
+    (
+        '103.103.103-18',
+        'Maria Aparecida',
+        2800.87,
+        '115'
+    );
+
+INSERT INTO
+    Trabalhadores (cpf, nome, salario, fk_obra_codigo)
+VALUES
+    ('104.104.104-52', 'Carlos Dutra', 3100.00, '116');
+
+INSERT INTO
+    Trabalhadores (cpf, nome, salario, fk_obra_codigo)
+VALUES
+    ('105.105.105-85', 'Mário Pires', 4323.29, '116');

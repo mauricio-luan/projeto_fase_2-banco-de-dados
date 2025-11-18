@@ -1,15 +1,11 @@
-/*
-
-Modelo Físico - script de criação do banco de dados
-
- */
+-- Modelo Físico - Script de criação do banco de dados
 CREATE TABLE
     Construtoras (
         codigo CHAR(3) PRIMARY KEY,
         nome VARCHAR2 (50) NOT NULL,
-        nome_fantasia VARCHAR2 (100) NOT NULL,
-        cidade VARCHAR2 (20) NOT NULL,
-        pais CHAR(2) NOT NULL
+        nome_fantasia VARCHAR2 (100),
+        cidade VARCHAR2 (20),
+        pais CHAR(2)
     );
 
 CREATE TABLE
@@ -33,7 +29,7 @@ CREATE TABLE
 
 CREATE TABLE
     Trabalhadores (
-        cpf CHAR(11) PRIMARY KEY,
+        cpf CHAR(14) PRIMARY KEY,
         nome VARCHAR2 (100) NOT NULL,
         salario NUMBER (10, 2) NOT NULL,
         fk_obra_codigo CHAR(6),
