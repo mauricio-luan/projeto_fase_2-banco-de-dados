@@ -1,4 +1,14 @@
 -- SCRIPT DE INSERÇÃO DE DADOS (CONSTRUTORA ALFA)
+-- insere Construtora
+INSERT INTO
+    Construtoras (codigo, nome, nome_fantasia)
+VALUES
+    (
+        '10',
+        'Construtora Alfa S.A.',
+        'Alfa Incorporações'
+    );
+
 -- insere Categorias
 INSERT INTO
     Categorias (codigo, descricao)
@@ -24,16 +34,6 @@ INSERT INTO
     Categorias (codigo, descricao)
 VALUES
     ('5', 'Ferramenta Elétrica');
-
--- insere Construtora
-INSERT INTO
-    Construtoras (codigo, nome, nome_fantasia)
-VALUES
-    (
-        '10',
-        'Construtora Alfa S.A.',
-        'Alfa Incorporações'
-    );
 
 -- insere Equipamentos
 INSERT INTO
