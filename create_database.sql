@@ -1,4 +1,4 @@
--- Modelo Físico - Script de criação do banco de dados
+-- MODELO FÍSICO DO BANCO DE DADOS
 CREATE TABLE
     Construtoras (
         codigo CHAR(3) PRIMARY KEY,
